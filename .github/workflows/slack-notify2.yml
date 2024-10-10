@@ -1,11 +1,11 @@
-name: cdc-notify
+name: cdc-notify-2
 
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '0 0 9 * *'
 
 jobs:
   notify:
@@ -21,6 +21,6 @@ jobs:
           # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           # For posting a simple plain text message
-          slack-message: "1日になりました。あくろす抽選予約をしましょう。 https://chofuacross-reserve.jp/ <@jishiha>"
+          slack-message: "9日になりました。あくろす抽選の確認をしましょう。 https://chofuacross-reserve.jp/ <@jishiha>"
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
